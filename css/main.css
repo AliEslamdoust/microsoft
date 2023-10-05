@@ -5,23 +5,25 @@
   font-family: "Segoe UI";
   font-style: italic;
   src: url(../fonts/Segoe\ UI\ Italic.woff); }
+@font-face {
+  font-family: "SegMDL2";
+  src: url(../fonts/SegMDL2.woff); }
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: Segoe UI, Arial, sans-serif;
-  transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1); }
+  font-family: Segoe UI, Arial, sans-serif; }
 
 input[type="checkbox"] {
   display: none; }
 
-div.sticky-top {
-  position: sticky;
-  top: 0;
-  left: 0;
+div.container-top {
+  position: static;
   width: 100%;
-  z-index: 999; }
-  div.sticky-top > div.cookies {
+  transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1); }
+  div.container-top * {
+    transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1); }
+  div.container-top > div.cookies {
     width: 100%;
     height: auto;
     display: flex;
@@ -30,7 +32,7 @@ div.sticky-top {
     background: #f2f2f2;
     padding: 0 2%;
     overflow: hidden; }
-    div.sticky-top > div.cookies > div.cookie-txt {
+    div.container-top > div.cookies > div.cookie-txt {
       display: flex;
       align-items: center;
       max-width: calc(52% + 36px);
@@ -38,17 +40,17 @@ div.sticky-top {
       font-size: 13px;
       color: #000;
       column-gap: 12px; }
-      div.sticky-top > div.cookies > div.cookie-txt > img {
+      div.container-top > div.cookies > div.cookie-txt > img {
         width: 24px;
         height: 24px; }
-      div.sticky-top > div.cookies > div.cookie-txt > p > a {
+      div.container-top > div.cookies > div.cookie-txt > p > a {
         text-decoration: underline;
         color: #0067b8; }
-    div.sticky-top > div.cookies > div.cookieBtn {
+    div.container-top > div.cookies > div.cookieBtn {
       display: flex;
       align-items: center;
-      column-gap: 8px; }
-      div.sticky-top > div.cookies > div.cookieBtn > * {
+      gap: 8px; }
+      div.container-top > div.cookies > div.cookieBtn > * {
         width: 150px;
         height: 36px;
         padding: 5px;
@@ -60,25 +62,25 @@ div.sticky-top {
         background-color: #ebebeb;
         color: #000;
         cursor: pointer; }
-        div.sticky-top > div.cookies > div.cookieBtn > *:hover {
+        div.container-top > div.cookies > div.cookieBtn > *:hover {
           box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
           background-color: #dbdbdb; }
-    div.sticky-top > div.cookies > div.managacookies-container {
+    div.container-top > div.cookies > div.managacookies-container {
       z-index: 1000;
       display: none;
       flex-direction: column;
       align-items: flex-start;
-      position: absolute;
+      position: fixed;
       width: 640px;
       height: max-content;
       top: 50%;
       left: 50%;
-      transform: translate(-50%);
+      transform: translate(-50%, -50%);
       padding: 36px 36px 36px 48px;
       border: 1px solid #0067b8;
       background-color: #fff;
       box-shadow: 0 0 0 10000px rgba(255, 255, 255, 0.65); }
-      div.sticky-top > div.cookies > div.managacookies-container > label {
+      div.container-top > div.cookies > div.managacookies-container > label {
         position: absolute;
         right: 12px;
         top: 12px;
@@ -86,7 +88,7 @@ div.sticky-top {
         height: 10px;
         cursor: pointer;
         transform: translateY(50%); }
-        div.sticky-top > div.cookies > div.managacookies-container > label::before {
+        div.container-top > div.cookies > div.managacookies-container > label::before {
           content: "";
           right: 0;
           left: 0;
@@ -95,7 +97,7 @@ div.sticky-top {
           height: 1px;
           background: #5f5f5f;
           position: absolute; }
-        div.sticky-top > div.cookies > div.managacookies-container > label::after {
+        div.container-top > div.cookies > div.managacookies-container > label::after {
           content: "";
           right: 0;
           left: 0;
@@ -104,59 +106,59 @@ div.sticky-top {
           height: 1px;
           background: #5f5f5f;
           position: absolute; }
-      div.sticky-top > div.cookies > div.managacookies-container > h1 {
+      div.container-top > div.cookies > div.managacookies-container > h1 {
         font-size: 20px;
         color: #000;
         margin-bottom: 12px; }
-      div.sticky-top > div.cookies > div.managacookies-container > form {
+      div.container-top > div.cookies > div.managacookies-container > form {
         display: flex;
         flex-direction: column;
         width: 100%;
         flex-grow: 1; }
-        div.sticky-top > div.cookies > div.managacookies-container > form div.mc-form-txt {
+        div.container-top > div.cookies > div.managacookies-container > form div.mc-form-txt {
           height: 460px;
           margin: 12px 0;
           width: 100%;
           overflow: auto; }
-          div.sticky-top > div.cookies > div.managacookies-container > form div.mc-form-txt > div.mc-txt {
+          div.container-top > div.cookies > div.managacookies-container > form div.mc-form-txt > div.mc-txt {
             font-size: 15px;
             color: #000;
             margin-bottom: 32px; }
-            div.sticky-top > div.cookies > div.managacookies-container > form div.mc-form-txt > div.mc-txt > h2 {
+            div.container-top > div.cookies > div.managacookies-container > form div.mc-form-txt > div.mc-txt > h2 {
               font-size: 18px; }
-            div.sticky-top > div.cookies > div.managacookies-container > form div.mc-form-txt > div.mc-txt > p {
+            div.container-top > div.cookies > div.managacookies-container > form div.mc-form-txt > div.mc-txt > p {
               margin-bottom: 12px; }
-              div.sticky-top > div.cookies > div.managacookies-container > form div.mc-form-txt > div.mc-txt > p > a {
+              div.container-top > div.cookies > div.managacookies-container > form div.mc-form-txt > div.mc-txt > p > a {
                 font-size: 15px;
                 text-decoration: none;
                 color: #000; }
-            div.sticky-top > div.cookies > div.managacookies-container > form div.mc-form-txt > div.mc-txt > div.mc-btn {
+            div.container-top > div.cookies > div.managacookies-container > form div.mc-form-txt > div.mc-txt > div.mc-btn {
               display: flex;
               align-items: center;
               column-gap: 1rem;
               cursor: pointer; }
-              div.sticky-top > div.cookies > div.managacookies-container > form div.mc-form-txt > div.mc-txt > div.mc-btn input#mc-input1:checked + label.mc-btn-container label.mc-btn-radio > label {
+              div.container-top > div.cookies > div.managacookies-container > form div.mc-form-txt > div.mc-txt > div.mc-btn input#mc-input1:checked + label.mc-btn-container label.mc-btn-radio > label {
                 background: #000; }
-              div.sticky-top > div.cookies > div.managacookies-container > form div.mc-form-txt > div.mc-txt > div.mc-btn input#mc-input2:checked + label.mc-btn-container label.mc-btn-radio > label {
+              div.container-top > div.cookies > div.managacookies-container > form div.mc-form-txt > div.mc-txt > div.mc-btn input#mc-input2:checked + label.mc-btn-container label.mc-btn-radio > label {
                 background: #000; }
-              div.sticky-top > div.cookies > div.managacookies-container > form div.mc-form-txt > div.mc-txt > div.mc-btn input#mc-input3:checked + label.mc-btn-container label.mc-btn-radio > label {
+              div.container-top > div.cookies > div.managacookies-container > form div.mc-form-txt > div.mc-txt > div.mc-btn input#mc-input3:checked + label.mc-btn-container label.mc-btn-radio > label {
                 background: #000; }
-              div.sticky-top > div.cookies > div.managacookies-container > form div.mc-form-txt > div.mc-txt > div.mc-btn input#mc-input4:checked + label.mc-btn-container label.mc-btn-radio > label {
+              div.container-top > div.cookies > div.managacookies-container > form div.mc-form-txt > div.mc-txt > div.mc-btn input#mc-input4:checked + label.mc-btn-container label.mc-btn-radio > label {
                 background: #000; }
-              div.sticky-top > div.cookies > div.managacookies-container > form div.mc-form-txt > div.mc-txt > div.mc-btn input#mc-input5:checked + label.mc-btn-container label.mc-btn-radio > label {
+              div.container-top > div.cookies > div.managacookies-container > form div.mc-form-txt > div.mc-txt > div.mc-btn input#mc-input5:checked + label.mc-btn-container label.mc-btn-radio > label {
                 background: #000; }
-              div.sticky-top > div.cookies > div.managacookies-container > form div.mc-form-txt > div.mc-txt > div.mc-btn input#mc-input6:checked + label.mc-btn-container label.mc-btn-radio > label {
+              div.container-top > div.cookies > div.managacookies-container > form div.mc-form-txt > div.mc-txt > div.mc-btn input#mc-input6:checked + label.mc-btn-container label.mc-btn-radio > label {
                 background: #000; }
-              div.sticky-top > div.cookies > div.managacookies-container > form div.mc-form-txt > div.mc-txt > div.mc-btn > input {
+              div.container-top > div.cookies > div.managacookies-container > form div.mc-form-txt > div.mc-txt > div.mc-btn > input {
                 width: 0;
                 height: 0;
                 overflow: hidden; }
-              div.sticky-top > div.cookies > div.managacookies-container > form div.mc-form-txt > div.mc-txt > div.mc-btn > label.mc-btn-container {
+              div.container-top > div.cookies > div.managacookies-container > form div.mc-form-txt > div.mc-txt > div.mc-btn > label.mc-btn-container {
                 display: flex;
                 align-items: center;
                 column-gap: 8px;
                 cursor: pointer; }
-                div.sticky-top > div.cookies > div.managacookies-container > form div.mc-form-txt > div.mc-txt > div.mc-btn > label.mc-btn-container > label.mc-btn-radio {
+                div.container-top > div.cookies > div.managacookies-container > form div.mc-form-txt > div.mc-txt > div.mc-btn > label.mc-btn-container > label.mc-btn-radio {
                   width: 16px;
                   height: 16px;
                   border: 1px solid #000;
@@ -166,18 +168,18 @@ div.sticky-top {
                   justify-content: center;
                   align-items: center;
                   cursor: pointer; }
-                  div.sticky-top > div.cookies > div.managacookies-container > form div.mc-form-txt > div.mc-txt > div.mc-btn > label.mc-btn-container > label.mc-btn-radio > label {
+                  div.container-top > div.cookies > div.managacookies-container > form div.mc-form-txt > div.mc-txt > div.mc-btn > label.mc-btn-container > label.mc-btn-radio > label {
                     width: 100%;
                     height: 100%;
                     border-radius: 50%;
                     cursor: pointer; }
-                div.sticky-top > div.cookies > div.managacookies-container > form div.mc-form-txt > div.mc-txt > div.mc-btn > label.mc-btn-container > label.mc-btn-txt {
+                div.container-top > div.cookies > div.managacookies-container > form div.mc-form-txt > div.mc-txt > div.mc-btn > label.mc-btn-container > label.mc-btn-txt {
                   cursor: pointer; }
-        div.sticky-top > div.cookies > div.managacookies-container > form > div.button-container {
+        div.container-top > div.cookies > div.managacookies-container > form > div.button-container {
           display: flex;
           justify-content: space-between;
           width: 100%; }
-          div.sticky-top > div.cookies > div.managacookies-container > form > div.button-container > button {
+          div.container-top > div.cookies > div.managacookies-container > form > div.button-container > button {
             width: calc(50% - 5px);
             height: 36px;
             display: flex;
@@ -186,46 +188,46 @@ div.sticky-top {
             font-size: 15px;
             border: none;
             cursor: pointer; }
-            div.sticky-top > div.cookies > div.managacookies-container > form > div.button-container > button[type="submit"] {
+            div.container-top > div.cookies > div.managacookies-container > form > div.button-container > button[type="submit"] {
               background: #0067b8;
               color: #fff; }
-            div.sticky-top > div.cookies > div.managacookies-container > form > div.button-container > button[type="reset"] {
+            div.container-top > div.cookies > div.managacookies-container > form > div.button-container > button[type="reset"] {
               background: #ebebeb;
               color: #000; }
-            div.sticky-top > div.cookies > div.managacookies-container > form > div.button-container > button:hover {
+            div.container-top > div.cookies > div.managacookies-container > form > div.button-container > button:hover {
               box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25); }
-  div.sticky-top > div.bing {
+  div.container-top > div.bing {
     height: 0;
     overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 0 5%; }
-    div.sticky-top > div.bing > div.bing-txt {
+    div.container-top > div.bing > div.bing-txt {
       display: grid;
       grid-template-columns: 48px 1fr;
       grid-template-rows: repeat(2, auto);
       column-gap: 12px; }
-      div.sticky-top > div.bing > div.bing-txt > img {
+      div.container-top > div.bing > div.bing-txt > img {
         grid-column: 1;
         grid-row: 1/-1;
         width: 100%;
         height: 100%;
         object-fit: contain; }
-      div.sticky-top > div.bing > div.bing-txt > span.bing-heading {
+      div.container-top > div.bing > div.bing-txt > span.bing-heading {
         font-size: 18px;
         grid-column: 2;
         grid-row: 1;
         font-weight: 600; }
-      div.sticky-top > div.bing > div.bing-txt > span.bing-body {
+      div.container-top > div.bing > div.bing-txt > span.bing-body {
         font-size: 13px;
         grid-column: 2;
         grid-row: 2; }
-    div.sticky-top > div.bing > div.bingBtn {
+    div.container-top > div.bing > div.bingBtn {
       display: flex;
       align-items: center;
       column-gap: 12px; }
-      div.sticky-top > div.bing > div.bingBtn > label {
+      div.container-top > div.bing > div.bingBtn > label {
         width: 120px;
         display: flex;
         justify-content: center;
@@ -233,7 +235,7 @@ div.sticky-top {
         color: #444;
         font-size: 14px;
         cursor: pointer; }
-      div.sticky-top > div.bing > div.bingBtn > a {
+      div.container-top > div.bing > div.bingBtn > a {
         display: flex;
         justify-content: center;
         align-items: center;
@@ -243,19 +245,132 @@ div.sticky-top {
         text-decoration: none;
         height: 34px;
         font-size: 15px; }
-        div.sticky-top > div.bing > div.bingBtn > a:hover {
+        div.container-top > div.bing > div.bingBtn > a:hover {
           text-decoration: underline; }
-  div.sticky-top input#cookies:checked ~ div.cookies {
+  div.container-top input#cookies:checked ~ div.cookies {
     height: 0; }
-  div.sticky-top input#cookies:checked ~ div.bing {
+  div.container-top input#cookies:checked ~ div.bing {
     height: auto;
     padding: 12px 5%;
     box-shadow: 1px 1px 10px #5f5f5f; }
-  div.sticky-top input#bingAd:checked ~ div.bing {
+  div.container-top input#bingAd:checked ~ div.bing {
     height: 0;
     padding: 0 5%;
     box-shadow: unset; }
-  div.sticky-top input#manageCookie:checked ~ div.managacookies-container {
+  div.container-top input#manageCookie:checked ~ div.managacookies-container {
     display: flex; }
+
+div.menu-top {
+  width: 100%;
+  padding: 0 5%;
+  display: flex;
+  align-items: center;
+  height: max-content; }
+  div.menu-top > nav {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    height: inherit; }
+    div.menu-top > nav > div.menu {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      height: inherit; }
+      div.menu-top > nav > div.menu > ul.menu-left {
+        display: flex;
+        align-items: center;
+        list-style: none; }
+        div.menu-top > nav > div.menu > ul.menu-left > a {
+          height: 22px;
+          box-sizing: content-box;
+          padding: 16px 8px; }
+          div.menu-top > nav > div.menu > ul.menu-left > a > img {
+            height: 100%;
+            object-fit: contain; }
+        div.menu-top > nav > div.menu > ul.menu-left > li {
+          height: 100%; }
+          div.menu-top > nav > div.menu > ul.menu-left > li > a {
+            font-size: 13px;
+            color: #000;
+            text-decoration: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            padding: 16px 8px 10px 8px;
+            width: 100%; }
+            div.menu-top > nav > div.menu > ul.menu-left > li > a > p {
+              padding: 2px 0;
+              border-bottom: 2px solid transparent; }
+            div.menu-top > nav > div.menu > ul.menu-left > li > a:hover > p {
+              border-bottom: 2px solid #000; }
+      div.menu-top > nav > div.menu > div.menu-right {
+        display: flex;
+        align-items: center;
+        font-size: 13px; }
+        div.menu-top > nav > div.menu > div.menu-right > div {
+          padding: 16px 8px 10px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          position: relative; }
+          div.menu-top > nav > div.menu > div.menu-right > div > * > p {
+            padding: 2px 0;
+            border-bottom: 2px solid transparent; }
+          div.menu-top > nav > div.menu > div.menu-right > div > *:hover > p {
+            border-bottom: 2px solid #000; }
+          div.menu-top > nav > div.menu > div.menu-right > div > label {
+            color: #000;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            column-gap: 6px; }
+          div.menu-top > nav > div.menu > div.menu-right > div:nth-child(1) > label::after {
+            content: "\E972";
+            font-family: "SegMDL2";
+            padding-top: 7px;
+            font-size: 8px;
+            color: #000; }
+          div.menu-top > nav > div.menu > div.menu-right > div:nth-child(2) > label::after {
+            content: "\E721";
+            font-family: "SegMDL2";
+            font-size: 16px;
+            margin-left: 2px;
+            color: #000; }
+          div.menu-top > nav > div.menu > div.menu-right > div > a {
+            text-decoration: none;
+            color: #000;
+            display: flex;
+            align-items: center;
+            column-gap: 6px; }
+            div.menu-top > nav > div.menu > div.menu-right > div > a:nth-of-type(1)::after {
+              content: "\e7bf";
+              font-family: "SegMDL2";
+              font-size: 16px;
+              color: #000; }
+          div.menu-top > nav > div.menu > div.menu-right > div > span {
+            color: #333;
+            font-size: 12px;
+            border: 1px solid #ccc;
+            box-shadow: 2px 2px 2px #777;
+            background: #fff;
+            z-index: 9999999;
+            padding: 2px;
+            position: fixed;
+            margin-top: 44px;
+            display: none; }
+          div.menu-top > nav > div.menu > div.menu-right > div:hover > span {
+            display: block; }
+        div.menu-top > nav > div.menu > div.menu-right > a {
+          padding: 16px 8px 10px;
+          text-decoration: none;
+          color: #000;
+          display: flex;
+          align-items: center;
+          column-gap: 8px; }
+          div.menu-top > nav > div.menu > div.menu-right > a > img {
+            width: 32px;
+            height: 32px;
+            object-fit: contain; }
 
 /*# sourceMappingURL=main.css.map */

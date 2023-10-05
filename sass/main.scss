@@ -7,10 +7,15 @@
   font-style: italic;
   src: url(../fonts/Segoe\ UI\ Italic.woff);
 }
+@font-face {
+  font-family: "SegMDL2";
+  src: url(../fonts/SegMDL2.woff);
+}
 
 $text-color-dark: #000;
 $text-color-light: #fff;
 $text-color: #444;
+$text-color-1: #333;
 $link-bg: #0078d4;
 $link: #0067b8;
 $dark: #000;
@@ -27,25 +32,29 @@ $font-bold: 700;
 $box-shadow-color: #5f5f5f;
 $box-shadow-color-1: rgba(0, 0, 0, 0.25);
 $cookiebg: rgba(255, 255, 255, 0.65);
+$main-font: "Segoe UI";
+$icon-font: "SegMDL2";
+$popup-box-shadow: #777;
+$popup-border: #ccc;
 
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
   font-family: Segoe UI, Arial, sans-serif;
-  transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
 }
 
 input[type="checkbox"] {
   display: none;
 }
 
-div.sticky-top {
-  position: sticky;
-  top: 0;
-  left: 0;
+div.container-top {
+  position: static;
   width: 100%;
-  z-index: 999;
+  transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+  * {
+    transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+  }
   > div.cookies {
     width: 100%;
     height: auto;
@@ -77,7 +86,7 @@ div.sticky-top {
     > div.cookieBtn {
       display: flex;
       align-items: center;
-      column-gap: 8px;
+      gap: 8px;
       > * {
         width: 150px;
         height: 36px;
@@ -101,12 +110,12 @@ div.sticky-top {
       display: none;
       flex-direction: column;
       align-items: flex-start;
-      position: absolute;
+      position: fixed;
       width: 640px;
       height: max-content;
       top: 50%;
       left: 50%;
-      transform: translate(-50%);
+      transform: translate(-50%, -50%);
       padding: 36px 36px 36px 48px;
       border: 1px solid $link;
       background-color: $light;
@@ -332,3 +341,144 @@ div.sticky-top {
     }
   }
 }
+div.menu-top {
+  width: 100%;
+  padding: 0 5%;
+  display: flex;
+  align-items: center;
+  height: max-content;
+  > nav {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    height: inherit;
+    > div.menu {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      height: inherit;
+      > ul.menu-left {
+        display: flex;
+        align-items: center;
+        list-style: none;
+        > a {
+          height: 22px;
+          box-sizing: content-box;
+          padding: 16px 8px;
+          > img {
+            height: 100%;
+            object-fit: contain;
+          }
+        }
+        > li {
+          height: 100%;
+          > a {
+            font-size: 13px;
+            color: $text-color-dark;
+            text-decoration: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            padding: 16px 8px 10px 8px;
+            width: 100%;
+            > p {
+              padding: 2px 0;
+              border-bottom: 2px solid transparent;
+            }
+            &:hover > p {
+              border-bottom: 2px solid $dark;
+            }
+          }
+        }
+      }
+      > div.menu-right {
+        display: flex;
+        align-items: center;
+        font-size: 13px;
+        > div {
+          padding: 16px 8px 10px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          position: relative;
+          > * > p {
+            padding: 2px 0;
+            border-bottom: 2px solid transparent;
+          }
+          > *:hover > p {
+            border-bottom: 2px solid $dark;
+          }
+          > label {
+            color: $text-color-dark;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            column-gap: 6px;
+          }
+          &:nth-child(1) > label::after {
+            content: "\E972";
+            font-family: $icon-font;
+            padding-top: 7px;
+            font-size: 8px;
+            color: $text-color-dark;
+          }
+          &:nth-child(2) > label::after {
+            content: "\E721";
+            font-family: $icon-font;
+            font-size: 16px;
+            margin-left: 2px;
+            color: $text-color-dark;
+          }
+          > a {
+            text-decoration: none;
+            color: $text-color-dark;
+            display: flex;
+            align-items: center;
+            column-gap: 6px;
+            &:nth-of-type(1)::after {
+              content: "\e7bf";
+              font-family: $icon-font;
+              font-size: 16px;
+              color: $text-color-dark;
+            }
+          }
+          > span {
+            color: $text-color-1;
+            font-size: 12px;
+            border: 1px solid $popup-border;
+            box-shadow: 2px 2px 2px $popup-box-shadow;
+            background: $light;
+            z-index: 9999999;
+            padding: 2px;
+            position: fixed;
+            margin-top: 44px;
+            display: none;
+          }
+          &:hover > span {
+            display: block;
+          }
+        }
+        > a {
+          padding: 16px 8px 10px;
+          text-decoration: none;
+          color: $text-color-dark;
+          display: flex;
+          align-items: center;
+          column-gap: 8px;
+          > img {
+            width: 32px;
+            height: 32px;
+            object-fit: contain;
+          }
+        }
+      }
+    }
+  }
+}
+
+// shopping cart: "E7BF"
+// search icon "E721"
+//chevrondown "E70D"
+//chevrondown small"E96E"
+//chevrondown medium "E972"

@@ -1,0 +1,22 @@
+
+  @media (max-width: 768px) {
+    div.container-top {
+      > div.cookies {
+        flex-direction: column;
+        justify-self: center;
+        > div.cookie-txt {
+          max-width: unset;
+          width: 90%;
+        }
+        > div.cookieBtn {
+          flex-direction: column;
+          padding-bottom: 12px;
+          width: 100%;
+          > * {
+            width: 90%;
+          }
+        }
+      }
+    }
+  }
+    
