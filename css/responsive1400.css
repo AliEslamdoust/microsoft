@@ -1,9 +1,0 @@
-@media (max-width: 1400px) {
-  div.menu-top > nav > div.menu > div.menu-right > :nth-last-child(1) > p,
-  div.menu-top > nav > div.menu > div.menu-right > :nth-last-child(2) > a > p,
-  div.menu-top > nav > div.menu > div.menu-right > :nth-last-child(3) > label > p {
-    display: none; }
-  div.menu-top > nav > div.menu > div.menu-right > :nth-last-child(1) > img {
-    margin-left: 8px; } }
-
-/*# sourceMappingURL=responsive1400.css.map */

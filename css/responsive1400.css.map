@@ -1,7 +1,0 @@
-{
-"version": 3,
-"mappings": "AAAA,0BAA2B;EAKjB;;iFAEiC;IAC/B,OAAO,EAAE,IAAI;EAEf,yEAAyB;IACvB,WAAW,EAAE,GAAG",
-"sources": ["../sass/responsive1400.scss"],
-"names": [],
-"file": "responsive1400.css"
-}
