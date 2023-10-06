@@ -8,6 +8,14 @@
 @font-face {
   font-family: "SegMDL2";
   src: url(../fonts/SegMDL2.woff); }
+@keyframes fadeIn {
+  0% {
+    display: block;
+    opacity: 0; }
+  1% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
 * {
   padding: 0;
   margin: 0;
@@ -276,6 +284,23 @@ div.menu-top {
       justify-content: space-between;
       width: 100%;
       height: inherit; }
+      div.menu-top > nav > div.menu > input#search:checked ~ ul.menu-left {
+        margin-right: 50px; }
+        div.menu-top > nav > div.menu > input#search:checked ~ ul.menu-left > li {
+          display: none; }
+      div.menu-top > nav > div.menu > input#search:checked ~ div.menu-right {
+        flex-grow: 1; }
+        div.menu-top > nav > div.menu > input#search:checked ~ div.menu-right > * {
+          display: none; }
+        div.menu-top > nav > div.menu > input#search:checked ~ div.menu-right > div:nth-child(2) {
+          display: flex !important;
+          padding: 0;
+          width: 95%;
+          height: 100%; }
+          div.menu-top > nav > div.menu > input#search:checked ~ div.menu-right > div:nth-child(2) > * {
+            display: none; }
+          div.menu-top > nav > div.menu > input#search:checked ~ div.menu-right > div:nth-child(2) > div.search-container {
+            display: flex !important; }
       div.menu-top > nav > div.menu > ul.menu-left {
         display: flex;
         align-items: center;
@@ -288,7 +313,8 @@ div.menu-top {
             height: 100%;
             object-fit: contain; }
         div.menu-top > nav > div.menu > ul.menu-left > li {
-          height: 100%; }
+          height: 100%;
+          position: relative; }
           div.menu-top > nav > div.menu > ul.menu-left > li > a {
             font-size: 13px;
             color: #000;
@@ -307,13 +333,14 @@ div.menu-top {
       div.menu-top > nav > div.menu > div.menu-right {
         display: flex;
         align-items: center;
-        font-size: 13px; }
+        font-size: 13px;
+        position: relative; }
         div.menu-top > nav > div.menu > div.menu-right > div {
           padding: 16px 8px 10px;
           display: flex;
           align-items: center;
           justify-content: center;
-          position: relative; }
+          height: 100%; }
           div.menu-top > nav > div.menu > div.menu-right > div > * > p {
             padding: 2px 0;
             border-bottom: 2px solid transparent; }
@@ -325,18 +352,173 @@ div.menu-top {
             display: flex;
             align-items: center;
             column-gap: 6px; }
-          div.menu-top > nav > div.menu > div.menu-right > div:nth-child(1) > label::after {
-            content: "\E972";
-            font-family: "SegMDL2";
-            padding-top: 7px;
-            font-size: 8px;
-            color: #000; }
+          div.menu-top > nav > div.menu > div.menu-right > div:nth-child(1) {
+            position: relative;
+            padding: 0; }
+            div.menu-top > nav > div.menu > div.menu-right > div:nth-child(1) > input:checked ~ label {
+              background: #f2f2f2;
+              border-color: rgba(0, 0, 0, 0.05) rgba(0, 0, 0, 0.05) #f2f2f2; }
+              div.menu-top > nav > div.menu > div.menu-right > div:nth-child(1) > input:checked ~ label:hover > p {
+                border-bottom: 2px solid transparent; }
+            div.menu-top > nav > div.menu > div.menu-right > div:nth-child(1) > input:checked ~ div.megamenu-container {
+              display: block;
+              animation: fadeIn 0.25s; }
+            div.menu-top > nav > div.menu > div.menu-right > div:nth-child(1) > label {
+              border-style: solid;
+              border-width: 1px 1px 2px;
+              border-color: transparent;
+              z-index: 701;
+              padding: 16px 8px 10px;
+              height: 100%; }
+            div.menu-top > nav > div.menu > div.menu-right > div:nth-child(1) > label::after {
+              z-index: 700;
+              content: "\E972";
+              font-family: "SegMDL2";
+              padding-top: 7px;
+              font-size: 8px;
+              color: #000; }
+            div.menu-top > nav > div.menu > div.menu-right > div:nth-child(1) > div.megamenu-container {
+              display: none;
+              opacity: 1; }
+              div.menu-top > nav > div.menu > div.menu-right > div:nth-child(1) > div.megamenu-container > label {
+                z-index: 699;
+                width: 100%;
+                height: 100vh;
+                background: transparent;
+                position: fixed;
+                left: 0;
+                top: 0; }
+              div.menu-top > nav > div.menu > div.menu-right > div:nth-child(1) > div.megamenu-container > div.megamenu {
+                border-style: solid;
+                border-width: 1px 1px 2px;
+                border-color: rgba(0, 0, 0, 0.05) rgba(0, 0, 0, 0.05) #000;
+                z-index: 700;
+                position: absolute;
+                top: calc(100% - 1px);
+                right: -200%;
+                width: 1230px;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                height: max-content;
+                background: #f2f2f2; }
+                div.menu-top > nav > div.menu > div.menu-right > div:nth-child(1) > div.megamenu-container > div.megamenu > ul {
+                  list-style: none;
+                  display: flex;
+                  flex-wrap: wrap;
+                  height: max-content; }
+                  div.menu-top > nav > div.menu > div.menu-right > div:nth-child(1) > div.megamenu-container > div.megamenu > ul > li {
+                    width: 200px; }
+                    div.menu-top > nav > div.menu > div.menu-right > div:nth-child(1) > div.megamenu-container > div.megamenu > ul > li > ul {
+                      display: flex;
+                      flex-direction: column;
+                      font-size: 13px;
+                      list-style: none;
+                      width: 100%; }
+                      div.menu-top > nav > div.menu > div.menu-right > div:nth-child(1) > div.megamenu-container > div.megamenu > ul > li > ul > span {
+                        color: #000;
+                        padding: 12px 0 12px 24px;
+                        font-weight: 600; }
+                      div.menu-top > nav > div.menu > div.menu-right > div:nth-child(1) > div.megamenu-container > div.megamenu > ul > li > ul > li {
+                        width: 100%; }
+                        div.menu-top > nav > div.menu > div.menu-right > div:nth-child(1) > div.megamenu-container > div.megamenu > ul > li > ul > li > a {
+                          padding: 12px 0 12px 24px;
+                          text-decoration: none;
+                          color: #262626;
+                          width: 100%;
+                          display: block; }
+                        div.menu-top > nav > div.menu > div.menu-right > div:nth-child(1) > div.megamenu-container > div.megamenu > ul > li > ul > li:hover > a {
+                          text-decoration: underline; }
+                div.menu-top > nav > div.menu > div.menu-right > div:nth-child(1) > div.megamenu-container > div.megamenu > div.megeamenu-bottom {
+                  width: 100%;
+                  height: 36px;
+                  font-size: 13px;
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  background: #e6e6e6; }
+                  div.menu-top > nav > div.menu > div.menu-right > div:nth-child(1) > div.megamenu-container > div.megamenu > div.megeamenu-bottom > a {
+                    display: flex;
+                    padding: 12px 48px;
+                    text-decoration: none;
+                    color: #000;
+                    column-gap: 6px;
+                    align-items: center; }
+                    div.menu-top > nav > div.menu > div.menu-right > div:nth-child(1) > div.megamenu-container > div.megamenu > div.megeamenu-bottom > a::after {
+                      content: "\E76C";
+                      font-family: "SegMDL2";
+                      font-size: 13px;
+                      color: #000; }
+                    div.menu-top > nav > div.menu > div.menu-right > div:nth-child(1) > div.megamenu-container > div.megamenu > div.megeamenu-bottom > a:hover > p {
+                      text-decoration: underline; }
           div.menu-top > nav > div.menu > div.menu-right > div:nth-child(2) > label::after {
             content: "\E721";
             font-family: "SegMDL2";
             font-size: 16px;
             margin-left: 2px;
             color: #000; }
+          div.menu-top > nav > div.menu > div.menu-right > div:nth-child(2) div.search-container {
+            display: none;
+            width: 100%;
+            column-gap: 5px;
+            display: none;
+            align-items: center;
+            padding-top: 12px;
+            height: 100%; }
+            div.menu-top > nav > div.menu > div.menu-right > div:nth-child(2) div.search-container > form {
+              flex-grow: 1;
+              height: 100%;
+              max-height: 36px;
+              position: relative; }
+              div.menu-top > nav > div.menu > div.menu-right > div:nth-child(2) div.search-container > form > input[type="text"] {
+                width: 100%;
+                height: 100%;
+                padding: 7px 38px 7px 10px;
+                border: 1px solid rgba(0, 0, 0, 0.7);
+                font-size: 13px;
+                background: #fff; }
+                div.menu-top > nav > div.menu > div.menu-right > div:nth-child(2) div.search-container > form > input[type="text"]:focus {
+                  outline: none;
+                  border: 2px solid #0067b8; }
+              div.menu-top > nav > div.menu > div.menu-right > div:nth-child(2) div.search-container > form > button {
+                position: absolute;
+                right: 10px;
+                top: 50%;
+                transform: translateY(-50%);
+                background: none;
+                border: unset; }
+                div.menu-top > nav > div.menu > div.menu-right > div:nth-child(2) div.search-container > form > button > span {
+                  width: max-content;
+                  color: #333;
+                  font-size: 12px;
+                  border: 1px solid #ccc;
+                  box-shadow: 2px 2px 2px #777;
+                  background: #fff;
+                  z-index: 9999999;
+                  padding: 2px;
+                  position: absolute;
+                  top: 100%;
+                  right: 0;
+                  transform: translateX(50%);
+                  display: none; }
+                div.menu-top > nav > div.menu > div.menu-right > div:nth-child(2) div.search-container > form > button:hover > span {
+                  display: block; }
+                div.menu-top > nav > div.menu > div.menu-right > div:nth-child(2) div.search-container > form > button::after {
+                  content: "\E721";
+                  font-family: "SegMDL2";
+                  font-size: 16px;
+                  margin-left: 2px;
+                  color: #000; }
+            div.menu-top > nav > div.menu > div.menu-right > div:nth-child(2) div.search-container > label {
+              display: flex;
+              align-items: center;
+              height: 36px;
+              padding: 6px 12px;
+              font-size: 13px;
+              color: #000;
+              border: 1px solid rgba(0, 0, 0, 0.7);
+              background: #fff;
+              cursor: pointer; }
           div.menu-top > nav > div.menu > div.menu-right > div > a {
             text-decoration: none;
             color: #000;
@@ -348,7 +530,7 @@ div.menu-top {
               font-family: "SegMDL2";
               font-size: 16px;
               color: #000; }
-          div.menu-top > nav > div.menu > div.menu-right > div > span {
+          div.menu-top > nav > div.menu > div.menu-right > div > * > span {
             color: #333;
             font-size: 12px;
             border: 1px solid #ccc;
@@ -358,10 +540,12 @@ div.menu-top {
             padding: 2px;
             position: fixed;
             margin-top: 44px;
+            transform: translateX(-50%);
             display: none; }
-          div.menu-top > nav > div.menu > div.menu-right > div:hover > span {
+          div.menu-top > nav > div.menu > div.menu-right > div > *:hover > span {
             display: block; }
         div.menu-top > nav > div.menu > div.menu-right > a {
+          height: 100%;
           padding: 16px 8px 10px;
           text-decoration: none;
           color: #000;
